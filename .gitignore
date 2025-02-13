@@ -1,0 +1,14 @@
+# Ignore Unity cache files
+Library/
+Temp/
+Logs/
+UserSettings/
+
+# Ignore Visual Studio files
+*.csproj
+*.sln
+*.userprefs
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

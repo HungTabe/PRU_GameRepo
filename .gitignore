@@ -1,0 +1,53 @@
+# Thư mục Library được Unity sử dụng để lưu trữ các dữ liệu tạm thời, bạn không cần commit thư mục này
+[Ll]ibrary/
+
+# Thư mục Temp cũng chứa các file tạm thời trong quá trình biên dịch
+[Tt]emp/
+
+# Các file được Unity tạo ra để lưu trữ thông tin liên quan đến dự án, không cần thiết cho git
+.obj/
+.build/
+.idea/
+
+# Thư mục Logs chứa các file nhật ký, không cần lưu trữ trong Git
+[Ll]ogs/
+
+# Thư mục để lưu các bản dựng của dự án (dựng từ Unity), không cần commit
+[Bb]uild/
+[Bb]uilds/
+
+# File ánh xạ các phiên bản cụ thể của Unity, không cần thiết phải đưa vào Git
+/[Uu]serSettings/
+
+# Các file biên dịch (compiled) và các file liên quan đến các nền tảng khác nhau
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.mdb
+*.apk
+*.aab
+*.app
+
+# Các file và thư mục không cần thiết từ hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Các file Unity liên quan đến meta-data (các file có đuôi .meta không được đưa vào Git)
+*.swp
+*.suo
+*.user
+
+# Cài đặt mặc định của các công cụ IDE (như Visual Studio, Rider)
+.vscode/
+.idea/
+.vs/
+
+# Các thư mục khác không cần thiết khi chạy Unity
+AssetStoreTools/
+
+# Các tệp cấu hình hoặc tệp ghi chú
+*.unityproj
+*.sln
+*.userprefs

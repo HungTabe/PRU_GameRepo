@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -17,17 +17,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("Update()");
         _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            //Debug.Log("Update() A");
-
             _turnDirection = 1.0f;
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            //Debug.Log("Update() B");
             _turnDirection = -1.0f;
         } else
         {
@@ -42,8 +38,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log("fixedUpdate()");
-
         if (_thrusting)
         {
             _rigidbody.AddForce(this.transform.up * this.thrustSpeed);
@@ -60,4 +54,20 @@ public class Player : MonoBehaviour
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
         bullet.Project(this.transform.up);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+        {
+            // Đặt vận tốc của đối tượng về 0, tức là dừng lại ngay lập tức.
+            _rigidbody.velocity = Vector3.zero;
+            // Dừng xoay của đối tượng, không cho nó tiếp tục xoay nữa.
+            _rigidbody.angularVelocity = 0.0f;
+            // Tắt (ẩn) đối tượng trong game, khiến nó không còn xuất hiện hoặc tương tác nữa.
+            this.gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().PlayerDied();
+        }
+    }
+
+
 }

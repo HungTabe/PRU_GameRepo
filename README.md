@@ -3,9 +3,13 @@ GEOMETRY DASHMIN
 
 Group Project PRU212 SE17D.NET
 Tran Dinh Hung
+
 Nguyen Thanh Hau
+
 Nguyen Ba Quyet
+
 Ly Manh Cuong
+
 Le Canh Trong
 
 General Information
